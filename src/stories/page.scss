@@ -15,24 +15,23 @@
   margin: 0 0 4px;
   display: inline-block;
   vertical-align: top;
+  @apply font-bold text-3xl;
 }
 
 .storybook-page p {
-  margin: 1em 0;
+  @apply my-4;
 }
 
 .storybook-page a {
-  text-decoration: none;
-  color: #1ea7fd;
+  @apply no-underline text-sky-500;
 }
 
 .storybook-page ul {
-  padding-left: 30px;
-  margin: 1em 0;
+  @apply pl-8 my-4;
 }
 
 .storybook-page li {
-  margin-bottom: 8px;
+  @apply mb-2;
 }
 
 .storybook-page .tip {
@@ -65,5 +64,5 @@
 }
 
 .storybook-page .tip-wrapper svg path {
-  fill: #1ea7fd;
+  @apply fill-sky-500;
 }
