@@ -1,36 +1,67 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
 
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+```
+project-root/
+|-- .storybook/
+|   |-- main.js
+|-- app/
+|   |-- (authenicated)
+|      |-- page.tsx
+|      |-- layout.tsx
+|      |-- global.scss
+    |-- (public)
+|      |-- page.tsx
+|      |-- layout.tsx
+|      |-- global.scss
+|   |-- page.tsx
+|   |-- layout.tsx
+|   |-- global.scss
+|-- components/
+|   |-- common/
+|   |   |-- Layout/
+|   |       |-- Header
+|   |       |   |-- Header.tsx
+|   |       |   |-- Header.module.scss
+|   |       |   |-- Header.stories.tsx
+|   |       |   |-- Header.test.tsx
+|   |       |-- Footer
+|   |           |-- Footer.tsx
+|   |           |-- Footer.module.scss
+|   |           |-- Footer.stories.tsx
+|   |           |-- Footer.test.tsx
+|   |-- features/
+|       |-- Feature1Component
+|           |-- Feature1Component.tsx
+|           |-- Feature1Component.module.scss
+|           |-- Feature1Component.stories.tsx
+|           |-- Feature1Component.test.tsx
+|-- clean-architecture/
+|   |-- application/
+|   |   |-- utils/
+|   |       |-- helperFunction1.ts
+|   |       |-- helperFunction2.ts
+|   |   |-- useCases
+|   |       |-- useCase1.ts
+|   |       |-- useCase2.ts
+|   |-- domain/
+|   |   |-- entity1.ts
+|   |   |-- entity2.ts
+|   |   |-- repositories/
+|   |       |-- entity1Repository.ts
+|   |       |-- entity2Repository.ts
+|   |-- infrastructure/
+|       |-- api/
+|           |-- swrConfig.ts
+|       |-- repositories/
+|           |-- entity1Repository.ts
+|           |-- entity2Repository.ts
+|       |-- state/
+|           |-- jotaiConfig.ts
+|-- public/
+|-- styles/
+|-- jest.config.js
+|-- tsconfig.json
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+explanation of the directories:
+<ul><li><p><strong>components</strong>: Reusable UI components. Common components can be shared across different features.</p></li><li><p><strong>pages</strong>: Next.js pages. Each file here corresponds to a route in your application.</p></li><li><p><strong>src/application</strong>: Contains use cases or application-specific logic. It interacts with the domain layer.</p></li><li><p><strong>src/domain</strong>: Represents the domain/business logic of your application. Includes entities and repositories.</p></li><li><p><strong>src/infrastructure</strong>: Deals with external services and configurations. In this case, it includes API configurations using SWR and state management configurations using Jotai.</p></li><li><p><strong>src/presentation</strong>: Contains components and pages responsible for presenting data. It interacts with the application layer.</p></li><li><p><strong>utils</strong>: General utility functions that can be used across the application.</p></li><li><p><strong>public</strong>: Static assets like images, fonts, etc.</p></li><li><p><strong>styles</strong>: CSS or styling related files.</p></li></ul>
