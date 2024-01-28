@@ -1,13 +1,14 @@
 ```
 project-root/
 |-- .storybook/
-|   |-- main.js
+|   |-- main.ts
+|   |-- preview.ts
 |-- app/
 |   |-- (authenicated)
 |   |  |-- page.tsx
 |   |  |-- layout.tsx
 |   |  |-- global.scss
-    |-- (public)
+|   |-- (public)
 |      |-- page.tsx
 |      |-- layout.tsx
 |      |-- global.scss
@@ -47,7 +48,7 @@ project-root/
 |   |-- infrastructure/
 |       |-- api/
 |       |   |-- swrConfig.ts
-|       |-- repositories/
+|       |-- repository/
 |       |   |-- entity1Repository.ts
 |       |   |-- entity2Repository.ts
 |       |-- state/
